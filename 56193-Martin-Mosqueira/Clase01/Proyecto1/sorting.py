@@ -10,16 +10,17 @@ class Sort():
                     lista[j], lista[j + 1] = lista[j + 1], lista[j]
         return lista
 
-    def insertionsort(lista):
-        n = len(lista)
-        i = 0
-        global comparaciones
-        for i in range(i, n):
-            val = lista[i]
-            j = i
-            while j > 0 and lista[j - 1] > val:
-                lista[j] = lista[j - 1]
-                j -= 1
-                comparaciones += 1
-            lista[j] = val
-            return lista
+    def insertionsort(self, lista):
+        for index in range(1,len(lista)):
+            valor= lista[index]
+            i= index -1
+            while i >= 0:
+                if valor < lista[i]:
+                    lista[i + 1] = lista[i]
+
+                    lista[i] = valor
+                    i = i -1
+                else:
+                    break
+        return lista
+
